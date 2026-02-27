@@ -112,6 +112,73 @@ print("add func:", add(3, 4))
 #* ---------- comments ----------
 # a single‑line comment starts with #
 """
-a multi‑line (doc)string uses triple quotes
+a multi-line (doc)string uses triple quotes
 and can span multiple lines.
 """
+
+
+#* ----------- data structures -------
+
+#^ list
+lst = [1, 2, 3]
+lst.append(4)           #~ [1, 2, 3, 4]
+lst.insert(0, 0)        #? [0, 1, 2, 3, 4]
+lst.extend([5, 6])      #& [0,1,2,3,4,5,6]
+lst.remove(3)           #todo remove first occurrence
+lst.pop()               #! pop last item, returns 6
+lst.pop(0)              #^ pop at index 0, returns 0
+lst.index(2)            #~ 1 (first index of value)
+lst.count(2)            #? how many 2’s
+lst.sort()              #& in‑place sort
+lst.reverse()           #todo in‑place reverse
+lst.clear()             #! becomes []
+
+#^ tuple
+t = (1, 2, 3)
+t[0]                    # 1
+len(t)                  # 3
+(4, 5) + t              #? concatenation → (4,5,1,2,3)
+
+#^ set
+s = {1, 2, 3}
+s.add(4)                #~ {1,2,3,4}
+s.update([5,6])         #? union with iterable
+s.remove(2)             #& KeyError if missing
+s.discard(10)           #todo no error if missing
+s.pop()                 #! remove arbitrary element
+s.clear()               #~ empty set
+s.union({3,7})          #? new set {1,3,4,5,6,7}
+s.intersection({3,7})   #& {3}
+s.difference({1,5})     #todo {2,3,4,6}
+s.symmetric_difference({3,7})  #* {1,2,4,5,6,7}
+
+#^ dictionary
+d = {"x": 1, "y": 2}
+d["z"] = 3              #~ add or update
+val = d.get("x")        #? get val (1)
+d.get("missing", 0)     #& default if not present
+d.keys()                #todo dict_keys(['x','y','z'])
+d.values()              #! dict_values([1,2,3])
+d.items()               #* dict_items([('x',1),...])
+d.pop("y")              #! remove key, return value
+d.popitem()             #todo remove last inserted 
+d.update({"a": 10})     #& merge another dict
+"d" in d                #? membership test on keys
+for k,v in d.items():   #~ iteration
+    print(k, v)
+
+#^ string
+s = "Hello World"
+s.lower()               #~ "hello world"
+s.upper()               #? "HELLO WORLD"
+s.capitalize()          #& "Hello world"
+s.title()               #! "Hello World"
+s.strip()               #todo remove whitespace
+s.split()               #* ["Hello","World"]
+" ".join(["a","b"])     #^ "a b"
+s.replace("World","You")
+s.startswith("He"), s.endswith("ld")
+s.find("o")             #& 4 (index) or -1
+len(s)                  #todo 11
+
+
