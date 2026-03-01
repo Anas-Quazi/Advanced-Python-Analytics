@@ -1,12 +1,13 @@
 #* ------------------ F1 OOP examples (no imports) ------------------
 
-#* basic class/object – driver
+#^ basic class/object – driver
 class Driver:
+    #! class variable: all drivers compete in F1
     series = "Formula 1"
     def __init__(self, name, number):
-        self.name = name
-        self.number = number
-        self._points = 0
+        self.name = name        #? driver’s name
+        self.number = number    #& car number
+        self._points = 0        #todo hidden score
     def introduce(self):
         print(f"Driver {self.name}, number {self.number}")
 
@@ -34,7 +35,7 @@ acct = TeamAccount(1000000)
 acct.cost(250000)
 print("Budget left:", acct.get_budget())
 
-#* “abstraction” without abc – just a base class with methods to override
+#^ “abstraction” without abc – base class with methods to override
 class Car:
     def top_speed(self):
         raise NotImplementedError
@@ -47,7 +48,7 @@ class Ferrari(Car):
     def top_speed(self): return 350
     def accelerate(self): return "vroom"
 
-#* inheritance & polymorphism – teams
+#! inheritance & polymorphism – teams
 class TeamMember(Driver):
     def __init__(self, name, number, team):
         super().__init__(name, number)
@@ -76,7 +77,7 @@ class RaceStats:
 rs = RaceStats()
 print(rs.laps(1,2), rs.laps(1,2,3))
 
-#* operator overloading – lap time addition
+#? operator overloading – lap time addition
 class LapTime:
     def __init__(self, seconds):
         self.seconds = seconds
@@ -87,7 +88,7 @@ class LapTime:
 
 print(LapTime(72.345) + LapTime(73.210))
 
-#* class & static methods – constructors
+#& class & static methods – constructors
 class ConstructorStandings:
     points = 0
     def __init__(self):
@@ -102,7 +103,7 @@ class ConstructorStandings:
 print(ConstructorStandings.total())
 ConstructorStandings.info()
 
-#* property – tyre temps
+#! property – tyre temps
 class Tyre:
     def __init__(self, temp=20):
         self._temp = temp
@@ -119,7 +120,7 @@ tyre = Tyre()
 tyre.temp = 85
 print("Tyre temp:", tyre.temp)
 
-#* multiple inheritance – driver who can engineer
+#todo multiple inheritance – driver who can engineer
 class Strategist:
     def strategize(self): print("planning pit stops")
 class Tester:
@@ -140,7 +141,7 @@ class PitCrew: pass
 
 print(PitCrew())
 
-#* manual “dataclass” equivalent
+#~ manual “dataclass” equivalent
 class Chassis:
     def __init__(self, weight, drag):
         self.weight = weight
