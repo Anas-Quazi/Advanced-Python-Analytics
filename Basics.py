@@ -1,4 +1,4 @@
-#! full‑python‑basics.py
+#! python basics
 
 #* ---------- printing ----------
 print("Hello, world")              
