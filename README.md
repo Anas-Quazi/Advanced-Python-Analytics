@@ -1,4 +1,4 @@
-# 🐍 Advanced-Python-Analytics
+# 🐍📊 Advanced-Python-Analytics
 
 A structured learning repository documenting my journey through advanced Python — from core programming concepts to real-world data analytics applications.
 
@@ -124,7 +124,7 @@ python basics.py
 
 ## 🙋‍♂️ Author
 
-**Your Name**
+**Anas Quazi**
 - GitHub: [@Anas-Quazi](https://github.com/Anas-Quazi)
 - LinkedIn: [muhammad-anas-quazi](https://www.linkedin.com/in/muhammad-anas-quazi/)
 
